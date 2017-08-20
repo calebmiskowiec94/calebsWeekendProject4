@@ -7,14 +7,38 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/style.css">
   </head>
-  <body>
+  <body ng-app="TableApp" ng-controller="TableController as vm">
       <div id = "inputsAndButton">
-      <label>name<input type="text" placeholder="name"></label>
-      <label>name<input type="text" placeholder="name"></label>
-      <label>name<input type="text" placeholder="name"></label>
-      <label>name<input type="text" placeholder="name"></label>
-      <label>name<input type="text" placeholder="name"></label>
+      <label>first name<input type="text" placeholder="first name"></label>
+      <label>last name<input type="text" placeholder="last name"></label>
+      <label>job title<input type="text" placeholder="job title"></label>
+      <label>salary<input type="text" placeholder="salary"></label>
       <button>submit</button>
       </div>
+    <div></div>
+    <div></div>
+    <div id = "display">
+
+<table>
+	<thead>
+		<tr>
+			      <th>First Name</th>
+			      <th>Last Name</th>
+            <th>Job Title</th>
+            <th>Salary<th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="chart in vm.table">
+      <th>{{chart.first_name}} </th>
+      <th>{{chart.last_name}}</th>
+			<th>{{chart.job_title}}</th>
+      <th>{{chart.salary}}</th>           
+		</tr>
+	</tbody>
+</table>
+
+
+    </div>
   </body>
 </html>

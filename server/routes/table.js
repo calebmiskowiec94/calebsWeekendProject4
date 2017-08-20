@@ -4,13 +4,13 @@ var pool = require('../modules/pool');
 
 router.post('/', function (req, res) {
     var ownerId = req.params.id;
-    console.log('pet post');
+    console.log('table post');
     pool.connect(function (errorConnectingToDatabase, client, done) {
         if (errorConnectingToDatabase) {
             console.log('Error connecting to database', errorConnectingToDatabase);
             res.sendStatus(500);
         } else {
-            client.query('INSERT INTO pets (name, breed, color, owner_id) VALUES ($1, $2, $3, $4);', [req.body.name, req.body.breed, req.body.color, ownerId], function (errorMakingQuery, result) {
+            client.query('INSERT INTO employees (name, breed, color, owner_id) VALUES ($1, $2, $3, $4);', [req.body.name, req.body.breed, req.body.color, ownerId], function (errorMakingQuery, result) {
                 done();
                 if (errorMakingQuery) {
                     console.log('Error making database query', errorMakingQuery);
