@@ -7,6 +7,7 @@ app.controller('TableController', ['$http', function ($http) {
     var self = this;
     self.employees = [];
     self.newEmployee = {};
+    //self.salary={}
 
    self.postNewEmployee = function(){
        console.log("New Employee", self.newEmployee);
@@ -27,7 +28,7 @@ self.getSalary = function () {
             url: '/salary'
         }).then(function(response) {
             // console.log(response.data);
-            self.employees = response.data;
+            self.salary = response.data[0];
         })  //then end
     } // getpets end
 
