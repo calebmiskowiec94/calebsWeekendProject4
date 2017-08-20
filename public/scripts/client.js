@@ -20,6 +20,23 @@ app.controller('TableController', ['$http', function ($http) {
          }); // end of $http
      }; // end of getMessages
 
+//salary function
+self.getSalary = function () {
+        $http({
+            method: 'GET',
+            url: '/salary'
+        }).then(function(response) {
+            // console.log(response.data);
+            self.employees = response.data;
+        })  //then end
+    } // getpets end
+
+self.getSalary();
+
+
+
+
+
     
   
     self.getTable = function () {
