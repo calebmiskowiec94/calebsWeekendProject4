@@ -9,15 +9,16 @@
   </head>
   <body ng-app="TableApp" ng-controller="TableController as vm">
       <div id = "inputsAndButton">
-      <label>first name<input type="text" placeholder="first name"></label>
-      <label>last name<input type="text" placeholder="last name"></label>
-      <label>job title<input type="text" placeholder="job title"></label>
-      <label>salary<input type="text" placeholder="salary"></label>
-      <button>submit</button>
+      <label>first name<input ng-model="vm.newEmployee.first_name" type="text" placeholder="first name"></label>
+      <label>last name<input ng-model="vm.newEmployee.last_name" type="text" placeholder="last name"></label>
+      <label>job title<input  ng-model="vm.newEmployee.job_title"   type="text" placeholder="job title"></label>
+      <label>salary<input  ng-model="vm.newEmployee.salary"  type="text" placeholder="salary"></label>
+      <button ng-click="vm.postNewEmployee()">submit</button>
       </div>
     <div></div>
     <div></div>
     <div id = "display">
+      {{ vm }}
 
 <table>
 	<thead>
@@ -29,11 +30,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="chart in vm.table">
-      <th>{{chart.first_name}}</th>
-      <th>{{chart.last_name}}</th>
-			<th>{{chart.job_title}}</th>
-      <th>{{chart.salary}}</th>           
+		<tr ng-repeat="table in vm.employees">
+      <th>{{table.first_name}}</th>
+      <th>{{table.last_name}}</th>
+			<th>{{table.job_title}}</th>
+      <th>{{table.salary}}</th>           
 		</tr>
 	</tbody>
 </table>
