@@ -28,7 +28,7 @@ self.getSalary = function () {
             url: '/salary'
         }).then(function(response) {
             // console.log(response.data);
-            self.salary = response.data[0];
+          self.salary = response.data[0].sum;
         })  //then end
     } // getpets end
 
