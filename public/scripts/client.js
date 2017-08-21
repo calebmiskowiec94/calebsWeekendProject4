@@ -18,6 +18,7 @@ app.controller('TableController', ['$http', function ($http) {
          }).then(function (response) {
              console.log(response);
              self.getTable();
+             self.getSalary();
          }); // end of $http
      }; // end of getMessages
 
@@ -25,7 +26,7 @@ app.controller('TableController', ['$http', function ($http) {
 self.getSalary = function () {
         $http({
             method: 'GET',
-            url: '/salary'
+            url: '/table/salary'
         }).then(function(response) {
             // console.log(response.data);
           self.salary = response.data[0].sum;
